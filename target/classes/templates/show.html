@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CAR_CUSTOMERS</title>
+    <style>
+        body {
+            background-color: #434974;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 75%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <h1> Table for car-customers</h1>
+    <table  class="table table-sm table-dark">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th> Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row, iterStat : ${customers}">
+            <td th:text="${row.id}"></td>
+            <td th:text="${row.firstname}"></td>
+            <td th:text="${row.surname}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+</body>
+</html>
